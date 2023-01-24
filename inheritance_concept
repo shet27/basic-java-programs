@@ -1,3 +1,4 @@
+//staff class is parent class
 class Staff {
 	String staffID, name;
 	long phoneNo;
@@ -22,7 +23,7 @@ class Staff {
 		System.out.println("The salary of the staff is : " + salary);
 	}
 }
-
+//child class
 class Teaching extends Staff {
 	String domain;
 	int NoOfPublication;
