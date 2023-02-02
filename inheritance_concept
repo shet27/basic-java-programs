@@ -94,7 +94,7 @@ class Contract extends Staff {
 
 }
 
-
+//main
 public class oopsconcept {
 
 	public static void main(String[] args) {
