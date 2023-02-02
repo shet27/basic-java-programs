@@ -46,7 +46,7 @@ class Teaching extends Staff {
 	}
 
 }
-
+//child class
 class Technical extends Staff {
 	String skills[] = new String[5];
 	int n;
@@ -93,6 +93,7 @@ class Contract extends Staff {
 	}
 
 }
+
 
 public class oopsconcept {
 
