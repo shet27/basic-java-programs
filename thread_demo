@@ -1,0 +1,74 @@
+import java.util.Random;
+
+class SquareThread implements Runnable {
+	int x;
+
+	SquareThread(int x) {
+		this.x = x;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Thread Name: Square Thread and Square of" + x + "is : " + x * x);
+	}
+}
+
+class cubethread implements Runnable {
+	int x;
+
+	cubethread(int x) {
+		this.x = x;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Thread Name: Cube Thread and Cube of" + x + "is : " + x * x * x);
+
+	}
+
+}
+
+class RandomThread implements Runnable {
+	Random r;
+	Thread t2, t3;
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		int num;
+		r = new Random();
+		try {
+			while (true) {
+				num = r.nextInt(100);
+				System.out.println("Main thread and generated number is" + num);
+				t2 = new Thread(new SquareThread(num));
+				t2.start();
+				t3 = new Thread(new cubethread(num));
+				t3.start();
+
+				Thread.sleep(1000);
+				System.out.println("--------------------------------------");
+
+			}
+		} catch (Exception ex) {
+			System.out.println("Interrupted exception");
+		}
+
+	}
+
+}
+
+public class ThreadDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated methodstub
+
+		RandomThread thread_obj = new RandomThread();
+		Thread t1 = new Thread(thread_obj);
+		t1.start();
+
+	}
+
+}
