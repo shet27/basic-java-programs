@@ -1,3 +1,4 @@
+//thread demo usinf runnabe abstract class
 import java.util.Random;
 
 class SquareThread implements Runnable {
