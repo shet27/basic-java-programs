@@ -1,0 +1,94 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class ArraylistExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+			  ArrayList<String> obj= new ArrayList<String>();
+			  Scanner d= new Scanner(System.in);
+			  
+			  int c,ch;
+			  int i,j;
+			  String str,str1;
+			  
+			  System.out.println("STRING MANUPILATION");
+			  System.out.println("*************************");
+			  System.out.println("1.APPEND AT THE END\n2.INSERT AT PARTICULAR INDEX\n3.SEARCH");
+			  System.out.println("4.LIST STRING THAT START WITH LETTER ");
+			  System.out.println("5.SIZE\n6.REMOV\n7.SORT\n8.DISPLAY\n");
+			  do {
+				  System.out.println("Enter your choice: ");
+				  c=d.nextInt();
+				  switch(c) {
+				  case 1:{
+					  System.out.println("enter the string :");
+					  str=d.next();
+					  obj.add(str);
+					  break;
+				  }
+				  case 2:{
+					  System.out.println("enter a string :");
+					  str=d.next();
+					  System.out.println("specify the index/postion to insert :");
+					  i=d.nextInt();
+					  obj.add(i-1,str);
+					  System.out.println("the array list has following elements:"+obj);
+					  break;
+				  }
+				  case 3:{
+					  System.out.println("enter a string to search:");
+					  str=d.next();
+					  j=obj.indexOf(str);
+					  if(j==-1) 
+						  System.out.println("element is not present");
+					  else
+						  System.out.println("index of:"+str+"is "+j);
+					  break;
+					  
+				  }
+				  case 4:{
+					  System.out.println("enter a character to list the string with starting letter:");
+					  str=d.next();
+					  for(i=0;i<(obj.size()-1);i++) {
+						  str1=obj.get(i);
+						  if(str1.startsWith(str)) {
+							  System.out.println(str1);
+						  }
+						  
+					  }
+					  break;
+				  }
+				  case 5:{
+					  System.out.println("Size of the list "+ obj.size());
+					  break;
+				  }
+				  case 6:{
+					  System.out.println("Enter the element to be removed:");
+					  str=d.next();
+					  if(obj.remove(str)) {
+						  System.out.println("Element removed:"+str);
+					  }else {
+						  System.out.println("elemnet not present!!!");
+					  }
+					  break;
+				  }
+				  case 7:{
+					  Collections.sort(obj);
+					  System.out.println("the array list has following elements:"+obj);
+					  break;
+				  }
+				  case 8:{
+					  System.out.println("the arry list has following element : "+obj);
+					  break;
+				  }
+				  default:System.out.println("invalid choice");break;
+				  }
+				  System.out.println("enter 0 to stop & 1 to continue:");
+				  ch=d.nextInt();
+			  }while(ch==1);
+	}
+
+}
