@@ -1,0 +1,68 @@
+class Userinfo{
+	String username;
+	String password;
+	String emailId;
+	long phoneNo;
+	
+	Userinfo(String uname, String pword){
+		username=uname;
+		password=pword;
+		System.out.println("User info created with user name ="+username+"  password="+password);
+	}
+	Userinfo(String uname,String eId, String pword){
+		username=uname;
+		password=pword;
+		emailId=eId;
+		System.out.println("User info created with user name ="+username+"  password ="+password+"  emailID "+emailId);
+		
+	}
+	Userinfo(String uname,String eId,String pword,long pNo){
+		username=uname;
+		password=pword;
+		emailId=eId;
+		phoneNo=pNo;
+		System.out.println("User info created with user name ="+username+"  password ="+password+"  emailID "+emailId+"  phoneNo"+phoneNo);
+		
+	}
+	
+	void login(String uname,String pword) {
+		System.out.println("Login with username="+uname+" password="+pword);
+	}
+	
+	void login(long pNo,String pword) {
+		System.out.println("Login with phone no="+pNo+" password="+pword);
+	}
+	
+	void login(String uname, String eID,String pword) {
+		System.out.println("Login with username="+uname+" password="+pword+"  emailID ="+eID);
+	}
+}
+
+public class prgm5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Scanner input= new Scanner(System.in);
+      System.out.println("enter your name:");
+      String name=input.next();
+      System.out.println("enter your emailID");
+      String emailID=input.next();
+      System.out.println("enter your phoneNo:");
+      long phNO=input.nextLong();
+      System.out.println("enter your password:");
+      String password=input.next();
+      System.out.println("<---------------------------------------------------------->");
+      System.out.println("Demonstrating constructor overloading");
+      Userinfo u1= new Userinfo(name,password);
+      Userinfo u2= new Userinfo(name,emailID,password);
+      Userinfo u3= new Userinfo(name,emailID,password,phNO);
+      
+      System.out.println("<---------------------------------------------------------->");
+      System.out.println("Demonstrating method overloading");
+      u1.login(name, password);
+      u1.login(phNO,password);
+      u1.login(name, emailID,password);
+      
+	}
+
+}
