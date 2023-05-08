@@ -1,4 +1,4 @@
-//method overloading
+//construction and method overloading
 class Userinfo{
 	String username;
 	String password;
